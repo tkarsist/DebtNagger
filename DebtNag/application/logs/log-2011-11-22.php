@@ -1,0 +1,7 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2011-11-22 22:50:05 --> INVALID LOGIN FOR USER: jpkaariainen@gmail.com
+ERROR - 2011-11-22 22:50:11 --> REGISTER: INPUT PARAMETER WRONG OR BOT ACCESS, TIME LESS THAN 5 seconds
+ERROR - 2011-11-22 22:50:25 --> REGISTER MAIL SENT: REGID:6 EMAIL:jpkaariainen@gmail.com
+ERROR - 2011-11-22 22:51:22 --> USER CONFIRMED ACCOUNT: USERID:6 EMAIL:jpkaariainen@gmail.com
+ERROR - 2011-11-22 22:51:42 --> USER ADDED CONTACT, USERID: 6

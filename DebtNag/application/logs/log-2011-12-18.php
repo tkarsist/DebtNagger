@@ -1,0 +1,5 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2011-12-18 15:16:20 --> REGISTER: INPUT PARAMETER WRONG OR BOT ACCESS, TIME LESS THAN 5 seconds
+ERROR - 2011-12-18 15:16:37 --> REGISTER: FORM VALIDATION FAILED
+ERROR - 2011-12-18 15:20:16 --> PASSWORD FORGOTTEN SENT: USERID:6 EMAIL:jpkaariainen@gmail.com

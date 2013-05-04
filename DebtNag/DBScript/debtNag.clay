@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clay-model clay-version="2.0.1">
+<database-model author="" begin-script="" end-script="" id="3479501a:13340e9f25e:-8000" name="debtNag" sql-dialect-id="jp.azzurri.clay.dialect.MySQL_5_0_Dialect" version="1.0">
+<schema-list>
+<schema id="3479501a:13340e9f25e:-7ffd" name="DEBTNAG">
+<table-list>
+<table id="3479501a:13340e9f25e:-7fff" name="USER">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fed" mandatory="true" name="ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7ff0" mandatory="true" name="NICK">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fec" mandatory="true" name="EMAIL">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="500" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7feb" mandatory="false" name="PWD">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fea" mandatory="false" name="NAGINTERVAL">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="25c3e05a:133a2ea241b:-7ff0" mandatory="false" name="CREATED">
+<data-type name="DATETIME" selected-variant-pattern="DATETIME"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="25c3e05a:133a2ea241b:-7fef" mandatory="false" name="LASTLOGIN">
+<data-type name="DATETIME" selected-variant-pattern="DATETIME"/>
+</column>
+</column-list>
+<primary-key id="3479501a:13340e9f25e:-7ffe" name="PK_USER">
+<primary-key-column name="ID"/>
+</primary-key>
+</table>
+<table id="3479501a:13340e9f25e:-7ffa" name="DEBT">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fde" mandatory="true" name="ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fdd" mandatory="true" name="DATE">
+<data-type name="DATETIME" selected-variant-pattern="DATETIME"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fdc" mandatory="false" name="DESCRIPTION">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fdb" mandatory="true" name="SUM">
+<data-type name="DOUBLE" selected-variant-pattern="DOUBLE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fda" mandatory="true" name="FK_USER_ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fd9" mandatory="true" name="FK_CONTACT_ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="3479501a:13340e9f25e:-7ff9" name="PK_DEBT">
+<primary-key-column name="ID"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="3479501a:13340e9f25e:-7f8c" name="FK_DEBT_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_USER" referenced-table="USER" referenced-table-schema="DEBTNAG" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="FK_USER_ID" referenced-key-column-name="ID"/>
+</foreign-key>
+<foreign-key id="3479501a:13340e9f25e:-7f26" name="FK_DEBT_2" on-delete="CASCADE" on-update="UNSPECIFIED" referenced-key="PK_CONTACT" referenced-table="CONTACT" referenced-table-schema="DEBTNAG" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="FK_CONTACT_ID" referenced-key-column-name="ID"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="3479501a:13340e9f25e:-7ff6" name="CONTACT">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fe7" mandatory="true" name="ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fe6" mandatory="true" name="NICK">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fe5" mandatory="true" name="EMAIL">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fe4" mandatory="false" name="NAG">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="29058cbf:1334edae93b:-7ff5" mandatory="false" name="LASTNAG">
+<data-type name="DATETIME" selected-variant-pattern="DATETIME"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="29058cbf:1334edae93b:-7ff4" mandatory="false" name="NEXTNAG">
+<data-type name="DATETIME" selected-variant-pattern="DATETIME"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="3479501a:13340e9f25e:-7fe1" mandatory="true" name="FK_USER_ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="3479501a:13340e9f25e:-7ff5" name="PK_CONTACT">
+<primary-key-column name="ID"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="3479501a:13340e9f25e:-7fcb" name="FK_CONTACT_1" on-delete="CASCADE" on-update="UNSPECIFIED" referenced-key="PK_USER" referenced-table="USER" referenced-table-schema="DEBTNAG" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="FK_USER_ID" referenced-key-column-name="ID"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="29058cbf:1334edae93b:-7ff3" name="CLAIMED_DEBT">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="29058cbf:1334edae93b:-7feb" mandatory="true" name="ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="29058cbf:1334edae93b:-7fea" mandatory="true" name="DATE">
+<data-type name="DATETIME" selected-variant-pattern="DATETIME"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="29058cbf:1334edae93b:-7fe9" mandatory="false" name="DESCRIPTION">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="29058cbf:1334edae93b:-7fe8" mandatory="true" name="SUM">
+<data-type name="DOUBLE" selected-variant-pattern="DOUBLE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="29058cbf:1334edae93b:-7fe7" mandatory="true" name="FK_CONTACT_ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="29058cbf:1334edae93b:-7fe6" mandatory="true" name="FK_USER_ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="29058cbf:1334edae93b:-7ff2" name="PK_CLAIMED_DEBT">
+<primary-key-column name="ID"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="29058cbf:1334edae93b:-7fca" name="FK_CLAIMED_DEBT_1" on-delete="CASCADE" on-update="UNSPECIFIED" referenced-key="PK_CONTACT" referenced-table="CONTACT" referenced-table-schema="DEBTNAG" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="FK_CONTACT_ID" referenced-key-column-name="ID"/>
+</foreign-key>
+<foreign-key id="29058cbf:1334edae93b:-7f96" name="FK_CLAIMED_DEBT_2" on-delete="CASCADE" on-update="UNSPECIFIED" referenced-key="PK_USER" referenced-table="USER" referenced-table-schema="DEBTNAG" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="FK_USER_ID" referenced-key-column-name="ID"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="25c3e05a:133a2ea241b:-7fec" name="REGISTER">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="25c3e05a:133a2ea241b:-7fe8" mandatory="true" name="ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="25c3e05a:133a2ea241b:-7fe7" mandatory="false" name="CREATED">
+<data-type name="DATETIME" selected-variant-pattern="DATETIME"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="25c3e05a:133a2ea241b:-7fe6" mandatory="false" name="NICK">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="25c3e05a:133a2ea241b:-7fe5" mandatory="false" name="EMAIL">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="500" decimal-digits="0" default-value="" id="25c3e05a:133a2ea241b:-7fe4" mandatory="false" name="PWD">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="25c3e05a:133a2ea241b:-7feb" name="PK_REGISTER">
+<primary-key-column name="ID"/>
+</primary-key>
+</table>
+<table id="5e174642:133b2309b21:-7ff1" name="MAILQUEUE">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="5e174642:133b2309b21:-7fed" mandatory="true" name="ID">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="5e174642:133b2309b21:-7fec" mandatory="false" name="CREATED">
+<data-type name="DATETIME" selected-variant-pattern="DATETIME"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="5e174642:133b2309b21:-7feb" mandatory="false" name="RECIPIENT">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="5e174642:133b2309b21:-7fea" mandatory="false" name="SUBJECT">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="5e174642:133b2309b21:-7fe9" mandatory="false" name="MESSAGE">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+</column-list>
+<primary-key id="5e174642:133b2309b21:-7ff0" name="PK_MAILQUEUE">
+<primary-key-column name="ID"/>
+</primary-key>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+<diagram>
+<table-figure height="134" refid="3479501a:13340e9f25e:-7fff" width="128" x="43" y="72"/>
+<table-figure height="169" refid="3479501a:13340e9f25e:-7ffa" width="184" x="54" y="302"/>
+<table-figure height="153" refid="3479501a:13340e9f25e:-7ff6" width="174" x="325" y="47"/>
+<table-figure height="183" refid="29058cbf:1334edae93b:-7ff3" width="181" x="421" y="250"/>
+<table-figure height="116" refid="25c3e05a:133a2ea241b:-7fec" width="198" x="535" y="81"/>
+<table-figure height="80" refid="5e174642:133b2309b21:-7ff1" width="133" x="625" y="258"/>
+</diagram>
+</clay-model>
